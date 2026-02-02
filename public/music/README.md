@@ -18,7 +18,8 @@ The website is configured to play:
 - **Main song**: `tu-itni-khoobsurat-hai.mp3`
 - **Auto-play**: Starts after user's first interaction (click/tap)
 - **Loop**: Song repeats continuously
-- **Volume**: Default 30%, adjustable by user
+- **Volume**: Fixed at 40% (optimal background level)
+- **Control**: Simple play/pause button only
 
 ## Instructions
 
@@ -28,9 +29,18 @@ The website is configured to play:
 
 ## Features
 
-✅ Auto-play after user interaction (required by browsers)
-✅ Volume control slider
-✅ Play/pause button
-✅ Loops continuously
-✅ Works across all pages
-✅ Responsive design
+✅ **Minimal UI** - Just a simple play/pause button
+✅ **Auto-play** after user interaction (required by browsers)
+✅ **Background music** - Plays continuously while browsing
+✅ **Loops** continuously throughout the experience
+✅ **Fixed volume** - Optimized at 40% for background ambiance
+✅ **Elegant design** - Floating circular button with glow effects
+✅ **Responsive** - Works on all devices
+
+## Music Player Design
+
+- **Location**: Bottom-right corner (floating)
+- **Size**: 56px circular button
+- **Icons**: ▶️ (play) / ⏸️ (pause)
+- **Effects**: Glowing animation when playing
+- **Auto-start**: Begins after first user click anywhere

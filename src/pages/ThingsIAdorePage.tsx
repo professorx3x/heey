@@ -51,7 +51,6 @@ export default function ThingsIAdorePage() {
             <h1 className="text-5xl md:text-7xl font-playful text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 mb-4">
               Things I Adore About You 🌼
             </h1>
-            <p className="text-xl text-gray-600 mt-4">Scroll gently...</p>
           </motion.div>
 
           {adorations.map((item, index) => {

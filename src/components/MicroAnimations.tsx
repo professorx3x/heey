@@ -68,32 +68,3 @@ export function SparkleText({ children, className = '' }: { children: React.Reac
     </span>
   )
 }
-
-// Idle animation component
-export function IdleAnimation({ delay = 5000 }: { delay?: number }) {
-  const [show, setShow] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(true)
-    }, delay)
-
-    return () => clearTimeout(timer)
-  }, [delay])
-
-  return (
-    <AnimatePresence>
-      {show && (
-        <motion.div
-          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-lg px-6 py-3 rounded-full shadow-lg text-gray-700 text-sm font-medium z-50"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-        >
-          Still here… just like me 😌
-        </motion.div>
-      )}
-    </AnimatePresence>
-  )
-}

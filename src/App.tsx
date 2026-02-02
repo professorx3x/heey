@@ -16,14 +16,12 @@ import IfIHadToChoosePage from './pages/IfIHadToChoosePage'
 import NotPromisesPage from './pages/NotPromisesPage'
 import MusicPlayer from './components/MusicPlayer'
 import FloatingThoughts from './components/FloatingThoughts'
-import { IdleAnimation } from './components/MicroAnimations'
 
 function App() {
   return (
     <div className="w-full h-full relative pointer-events-auto">
       <MusicPlayer />
       <FloatingThoughts />
-      <IdleAnimation delay={5000} />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/disclaimer" element={<DisclaimerPage />} />

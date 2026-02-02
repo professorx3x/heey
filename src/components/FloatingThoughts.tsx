@@ -17,40 +17,40 @@ export default function FloatingThoughts() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (Math.random() > 0.7 && activeThoughts.length < 3) {
+      if (Math.random() > 0.85 && activeThoughts.length < 2) { // Reduced frequency and max count
         const newThought = {
           id: Date.now(),
           text: thoughts[Math.floor(Math.random() * thoughts.length)],
-          x: Math.random() * 80 + 10, // 10% to 90%
-          y: Math.random() * 60 + 20, // 20% to 80%
+          x: Math.random() * 70 + 15, // 15% to 85% (more centered)
+          y: Math.random() * 40 + 30, // 30% to 70% (more centered)
         }
         setActiveThoughts((prev) => [...prev, newThought])
         
-        // Remove after 4 seconds
+        // Remove after 3 seconds (shorter duration)
         setTimeout(() => {
           setActiveThoughts((prev) => prev.filter((t) => t.id !== newThought.id))
-        }, 4000)
+        }, 3000)
       }
-    }, 5000)
+    }, 8000) // Increased interval to 8 seconds
 
     return () => clearInterval(interval)
   }, [activeThoughts.length])
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-40 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-30 overflow-hidden"> {/* Reduced z-index */}
       <AnimatePresence>
         {activeThoughts.map((thought) => (
           <motion.div
             key={thought.id}
-            className="absolute bg-white/90 backdrop-blur-md rounded-full px-4 py-2 text-sm font-medium text-gray-700 shadow-lg"
+            className="absolute bg-white/70 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-light text-gray-600 shadow-sm opacity-60" // Much smaller and more subtle
             style={{
               left: `${thought.x}%`,
               top: `${thought.y}%`,
             }}
-            initial={{ opacity: 0, y: 20, scale: 0.8 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.8 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 10, scale: 0.9 }}
+            animate={{ opacity: 0.6, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.9 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {thought.text}
           </motion.div>

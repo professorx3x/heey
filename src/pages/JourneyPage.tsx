@@ -96,15 +96,6 @@ export default function JourneyPage() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 text-white/80 text-sm"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          Scroll to continue the journey...
-        </motion.div>
-
         {/* Continue button appears at the end */}
         <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
           <motion.button
